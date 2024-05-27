@@ -3,18 +3,17 @@ const singleTon = (function () {
 
   const Counter = function () {
     this.count = 0;
-    this.incrementCounter = function () {
-      this.count += 1;
-    };
-    this.decrementCounter = function () {
-      this.count -= 1;
-    };
   };
 
-  return () => {
-    if (instance) {
-      return instance;
-    }
+  Counter.prototype.increment = function () {
+    this.count++;
+  };
+  Counter.prototype.decrement = function () {
+    this.count--;
+  };
+
+  return function () {
+    if (instance) return instance;
     instance = new Counter();
     return instance;
   };
@@ -23,11 +22,14 @@ const singleTon = (function () {
 const counter = singleTon();
 const counter2 = singleTon();
 
-console.log(counter.count);
+console.log("counter.count", counter.count);
 
-counter.incrementCounter();
-counter.incrementCounter();
-counter.incrementCounter();
-counter2.decrementCounter();
+counter.increment();
+counter.increment();
+counter.increment();
+counter2.increment();
+counter2.increment();
+counter2.decrement();
+counter.decrement();
 
-console.log(counter.count);
+console.log("counter.count", counter.count);
