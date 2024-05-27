@@ -1,0 +1,10 @@
+
+Execution Order
+Method Chaining(compute().lakh(15).crore(2).thousand(4000).lakh(4).value())
+Caching LRU
+
+Observer Pattern
+
+
+
+

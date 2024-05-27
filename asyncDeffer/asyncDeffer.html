@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body onclick="handleClick()">
+    <div class="">
+      <i>Norma Script Loading</i>
+      <p class="">
+        While HTML page is parsing, <b>script</b> can fetch in between and the
+        html and css parsing will hold until the script get <b> load </b> and
+        <b> execute </b>.
+      </p>
+    </div>
+    <div class="">
+      <i>Async Script Loading</i>
+      <p class="">
+        While HTML page is parsing, <b>script</b> can
+        <b> load </b> asynchronously but parsing will hold for the
+        <b> execution </b>.
+      </p>
+    </div>
+    <div class="">
+      <i>Defer Script Loading</i>
+      <p class="">
+        While HTML page is parsing, <b>script</b> can
+        <b> load </b> asynchronously and html parsing will continue after only
+        parsing completion script will <b> execution </b>.
+      </p>
+    </div>
+  </body>
+  <script src="./asyncPage.js"></script>
+  <script async src="./asyncPage.js"></script>
+  <script defer src="./asyncPage.js"></script>
+</html>
